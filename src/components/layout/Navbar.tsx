@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Container } from "@/components/shared/Container"
 import { ThemeToggle } from "@/components/layout/ThemeToggle"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
@@ -29,26 +30,20 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "bg-background/80 backdrop-blur-xl shadow-sm border-b border-border"
-          : "bg-transparent"
+        "bg-background/70 backdrop-blur-md border-b border-border",
+        scrolled && "bg-background/90 shadow-sm"
       )}
     >
       <Container>
         <nav
           className={cn(
             "flex items-center justify-between transition-all duration-500",
-            scrolled ? "h-14 md:h-16" : "h-16 md:h-20"
+            scrolled ? "h-14 md:h-16" : "h-16 md:h-18"
           )}
         >
-          <a href="#home" className="flex items-center gap-2 group">
+          <a href="#home" className="flex items-center gap-2 shrink-0">
             <span className="text-xl font-bold font-heading tracking-tight">
-              <span className={cn(
-                "transition-colors duration-300",
-                scrolled ? "text-foreground" : "text-white"
-              )}>
-                Pilot
-              </span>
+              <span className="text-foreground">Pilot</span>
               <span className="text-accent"> Industries</span>
             </span>
           </a>
@@ -59,31 +54,30 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200",
-                  "after:absolute after:bottom-0.5 after:left-4 after:right-4 after:h-0.5 after:rounded-full after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100",
-                  scrolled
-                    ? "text-muted-foreground hover:text-foreground after:bg-foreground"
-                    : "text-white/90 hover:text-white after:bg-white"
+                  "relative px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200",
+                  "text-muted-foreground hover:text-foreground",
+                  "after:absolute after:bottom-0.5 after:left-3 after:right-3 after:h-[2px] after:rounded-full",
+                  "after:bg-accent after:scale-x-0 after:opacity-0",
+                  "hover:after:scale-x-100 hover:after:opacity-100",
+                  "after:transition-all after:duration-300"
                 )}
               >
                 {link.label}
               </a>
             ))}
-            <div className="ml-2">
-              <ThemeToggle light={!scrolled} />
+            <div className="ml-3 flex items-center gap-2">
+              <Button variant="outline" size="sm" asChild className="border-border text-muted-foreground hover:text-accent hover:border-accent">
+                <a href="#products">Get Quote</a>
+              </Button>
+              <ThemeToggle />
             </div>
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle light={!scrolled} />
+            <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={cn(
-                "flex h-9 w-9 items-center justify-center rounded-lg transition-colors",
-                scrolled
-                  ? "border border-border hover:bg-muted"
-                  : "border border-white/20 text-white hover:bg-white/10"
-              )}
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:bg-muted transition-colors"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -113,6 +107,11 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
+            <div className="pt-2 px-1">
+              <Button variant="outline" size="md" className="w-full border-border text-muted-foreground hover:text-accent hover:border-accent" asChild>
+                <a href="#products" onClick={() => setMobileOpen(false)}>Get Quote</a>
+              </Button>
+            </div>
           </div>
         </Container>
       </div>
