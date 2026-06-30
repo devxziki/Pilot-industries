@@ -1,5 +1,6 @@
 "use client"
 
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 interface SectionHeadingProps {
@@ -18,7 +19,11 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.5 }}
       className={cn(
         "max-w-2xl",
         centered && "mx-auto text-center",
@@ -45,13 +50,11 @@ export function SectionHeading({
           {subtitle}
         </p>
       )}
-      <div
-        className={cn(
-          "mt-6 h-1 w-16 rounded-full",
-          centered && "mx-auto",
-          light ? "bg-[#F5A623]" : "bg-[#F5A623]"
-        )}
-      />
-    </div>
+      <div className="relative mt-6 flex items-center justify-center gap-1.5">
+        <span className={cn("h-1 w-3 rounded-full", light ? "bg-white/20" : "bg-gray-300 dark:bg-gray-700")} />
+        <span className={cn("h-1 w-10 rounded-full bg-[#F5A623]", centered && "mx-auto")} />
+        <span className={cn("h-1 w-3 rounded-full", light ? "bg-white/20" : "bg-gray-300 dark:bg-gray-700")} />
+      </div>
+    </motion.div>
   )
 }

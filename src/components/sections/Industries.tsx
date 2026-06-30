@@ -37,8 +37,11 @@ const areas = [
 
 export function Industries() {
   return (
-    <section className="py-20 md:py-28 bg-gray-50 dark:bg-gray-900">
-      <Container>
+    <section className="relative py-20 md:py-28 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+      <div className="absolute bottom-1/3 -left-32 w-64 h-64 bg-[#0F3D5E]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 -right-32 w-64 h-64 bg-[#F5A623]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <Container className="relative z-10">
         <SectionHeading
           title="Industries We Serve"
           subtitle="Trusted by professionals across the construction ecosystem."
@@ -52,16 +55,19 @@ export function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="group"
             >
-              <Card className="h-full text-center group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-gray-100 dark:border-gray-800">
-                <CardContent className="p-8">
-                  <div className="mx-auto h-14 w-14 rounded-xl bg-[#0F3D5E]/5 dark:bg-[#0F3D5E]/20 flex items-center justify-center mb-5 group-hover:bg-[#0F3D5E] transition-colors duration-300">
-                    <item.icon className="h-7 w-7 text-[#0F3D5E] dark:text-[#F5A623] group-hover:text-white dark:group-hover:text-white transition-colors duration-300" />
+              <Card className="h-full text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-xl border-gray-100 dark:border-gray-800 hover:border-[#F5A623]/20 dark:hover:border-[#F5A623]/20">
+                <CardContent className="p-8 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#F5A623]/0 via-transparent to-[#0F3D5E]/0 group-hover:from-[#F5A623]/5 group-hover:to-[#0F3D5E]/5 transition-all duration-500 pointer-events-none" />
+
+                  <div className="relative z-10 mx-auto h-14 w-14 rounded-xl bg-[#0F3D5E]/5 dark:bg-[#0F3D5E]/20 flex items-center justify-center mb-5 group-hover:bg-[#0F3D5E] transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#0F3D5E]/20">
+                    <item.icon className="h-7 w-7 text-[#0F3D5E] dark:text-[#F5A623] group-hover:text-white dark:group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="font-semibold text-[#0F3D5E] dark:text-white mb-2">
+                  <h3 className="relative z-10 font-semibold text-[#0F3D5E] dark:text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <p className="relative z-10 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     {item.description}
                   </p>
                 </CardContent>
@@ -82,13 +88,14 @@ export function Industries() {
           </h3>
           <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {areas.map((area) => (
-              <div
+              <motion.div
                 key={area.name}
-                className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-5 text-center hover:shadow-sm transition-shadow"
+                whileHover={{ y: -2 }}
+                className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-5 text-center hover:shadow-lg transition-all duration-300 hover:border-[#F5A623]/20"
               >
                 <p className="font-semibold text-[#0F3D5E] dark:text-white text-sm">{area.name}</p>
                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{area.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 interface CounterProps {
   from: number
@@ -11,20 +11,33 @@ interface CounterProps {
 
 export function Counter({ from, to, duration = 2, isInView }: CounterProps) {
   const [count, setCount] = useState(from)
+  const startedRef = useRef(false)
 
   useEffect(() => {
+    if (startedRef.current) return
+
     if (!isInView) return
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      startedRef.current = true
+      return
+    }
+
+    startedRef.current = true
+
     let startTime: number | null = null
+    let raf: number
+
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp
       const progress = Math.min((timestamp - startTime) / (duration * 1000), 1)
       const eased = 1 - Math.pow(1 - progress, 3)
       setCount(Math.floor(from + (to - from) * eased))
-      if (progress < 1) requestAnimationFrame(step)
+      if (progress < 1) raf = requestAnimationFrame(step)
     }
 
-    requestAnimationFrame(step)
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
   }, [from, to, duration, isInView])
 
   return <span>{count}</span>
