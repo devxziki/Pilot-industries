@@ -1,0 +1,5 @@
+Reference these files with @file at session start:
+@.vortex/state/last-action.md
+@.vortex/state/current-task.md
+Project: Pilot-industries — unknown / unknown
+Always update .vortex/state/last-action.md before ending any session.
