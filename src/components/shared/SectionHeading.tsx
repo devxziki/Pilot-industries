@@ -33,7 +33,7 @@ export function SectionHeading({
       <h2
         className={cn(
           "text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl font-heading",
-          light ? "text-white" : "text-[#0F3D5E] dark:text-white"
+          light ? "text-white" : "text-foreground"
         )}
       >
         {title}
@@ -44,16 +44,16 @@ export function SectionHeading({
             "mt-4 text-lg leading-relaxed",
             light
               ? "text-gray-300"
-              : "text-gray-600 dark:text-gray-300"
+              : "text-muted-foreground"
           )}
         >
           {subtitle}
         </p>
       )}
       <div className="relative mt-6 flex items-center justify-center gap-1.5">
-        <span className={cn("h-1 w-3 rounded-full", light ? "bg-white/20" : "bg-gray-300 dark:bg-gray-700")} />
-        <span className={cn("h-1 w-10 rounded-full bg-[#F5A623]", centered && "mx-auto")} />
-        <span className={cn("h-1 w-3 rounded-full", light ? "bg-white/20" : "bg-gray-300 dark:bg-gray-700")} />
+        <span className={cn("h-1 w-3 rounded-full", light ? "bg-white/20" : "bg-border")} />
+        <span className={cn("h-1 w-10 rounded-full bg-accent", centered && "mx-auto")} />
+        <span className={cn("h-1 w-3 rounded-full", light ? "bg-white/20" : "bg-border")} />
       </div>
     </motion.div>
   )

@@ -17,45 +17,44 @@ export function Stats() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0F3D5E] via-[#0a2d45] to-[#061f30]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,166,35,0.08)_0%,transparent_50%)]" />
-
-      <Container className="relative z-10">
-        <div
-          ref={ref}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="relative text-center md:px-8"
-            >
-              {index < stats.length - 1 && (
-                <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-16">
-                  <div className="h-full w-full bg-gradient-to-b from-transparent via-[#F5A623]/30 to-transparent" />
-                </div>
-              )}
-              <div className="text-4xl md:text-5xl font-bold font-heading text-[#F5A623]">
-                {stat.staticText ? (
-                  <span>{stat.staticText}</span>
-                ) : (
-                  <>
-                    {stat.prefix && <span>{stat.prefix} </span>}
-                    {stat.value > 0 && <Counter from={0} to={stat.value} isInView={isInView} />}
-                    {stat.suffix && <span>{stat.suffix}</span>}
-                  </>
+    <section className="relative py-16 md:py-20 overflow-hidden">
+      <Container>
+        <div className="rounded-2xl border border-border bg-muted/50 p-8 md:p-12">
+          <div
+            ref={ref}
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="relative text-center md:px-8"
+              >
+                {index < stats.length - 1 && (
+                  <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-16">
+                    <div className="h-full w-full bg-gradient-to-b from-transparent via-accent/30 to-transparent" />
+                  </div>
                 )}
-              </div>
-              <p className="mt-2 text-sm md:text-base text-gray-300 font-medium">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
+                <div className="text-4xl md:text-5xl font-bold font-heading text-accent">
+                  {stat.staticText ? (
+                    <span>{stat.staticText}</span>
+                  ) : (
+                    <>
+                      {stat.prefix && <span>{stat.prefix} </span>}
+                      {stat.value > 0 && <Counter from={0} to={stat.value} isInView={isInView} />}
+                      {stat.suffix && <span>{stat.suffix}</span>}
+                    </>
+                  )}
+                </div>
+                <p className="mt-2 text-sm md:text-base text-muted-foreground font-medium">
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

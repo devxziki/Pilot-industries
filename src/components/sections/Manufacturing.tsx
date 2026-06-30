@@ -30,9 +30,7 @@ const steps = [
 
 export function Manufacturing() {
   return (
-    <section className="relative py-20 md:py-28 bg-white dark:bg-gray-950 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(15,61,94,0.03)_0%,transparent_60%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(245,166,35,0.02)_0%,transparent_60%)]" />
-
+    <section className="relative py-20 md:py-28 overflow-hidden">
       <Container className="relative z-10">
         <SectionHeading
           title="Our Manufacturing Process"
@@ -46,7 +44,7 @@ export function Manufacturing() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
-              className="h-full w-full bg-gradient-to-r from-[#F5A623] via-[#F5A623]/60 to-[#F5A623] origin-left"
+              className="h-full w-full bg-gradient-to-r from-accent via-accent/60 to-accent origin-left"
             />
           </div>
 
@@ -59,16 +57,16 @@ export function Manufacturing() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="relative text-center"
             >
-              <div className="relative z-10 mx-auto h-24 w-24 rounded-2xl bg-gradient-to-br from-[#0F3D5E]/5 to-[#0F3D5E]/10 dark:from-[#0F3D5E]/20 dark:to-[#0F3D5E]/30 flex items-center justify-center mb-6 border border-white dark:border-gray-950 shadow-lg shadow-[#0F3D5E]/5 dark:shadow-[#0F3D5E]/10 transition-transform duration-300 hover:scale-105">
-                <div className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-[#F5A623] text-white text-xs font-bold flex items-center justify-center shadow-lg shadow-[#F5A623]/30">
+              <div className="relative z-10 mx-auto h-24 w-24 rounded-2xl bg-accent-secondary/5 dark:bg-accent-secondary/10 flex items-center justify-center mb-6 border border-surface shadow-lg shadow-accent-secondary/5 dark:shadow-accent-secondary/10 transition-transform duration-300 hover:scale-105">
+                <div className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center shadow-lg shadow-accent/30">
                   {index + 1}
                 </div>
-                <step.icon className="h-10 w-10 text-[#0F3D5E] dark:text-[#F5A623]" />
+                <step.icon className="h-10 w-10 text-accent-secondary" />
               </div>
-              <h3 className="font-semibold text-[#0F3D5E] dark:text-white mb-2">
+              <h3 className="font-semibold text-foreground mb-2">
                 {step.title}
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-[200px] mx-auto">
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px] mx-auto">
                 {step.description}
               </p>
             </motion.div>

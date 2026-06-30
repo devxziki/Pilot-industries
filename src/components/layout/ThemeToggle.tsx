@@ -24,7 +24,7 @@ export function ThemeToggle({ className, light }: ThemeToggleProps) {
 
   if (!mounted) {
     return (
-      <div className={cn("h-9 w-9 rounded-lg", light ? "border border-white/20" : "border border-gray-200 dark:border-gray-800", className)} />
+      <div className={cn("h-9 w-9 rounded-lg", light ? "border border-white/20" : "border border-border", className)} />
     )
   }
 
@@ -35,7 +35,7 @@ export function ThemeToggle({ className, light }: ThemeToggleProps) {
         "flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-200",
         light
           ? "border border-white/20 text-white hover:bg-white/10"
-          : "border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800",
+          : "border border-border hover:bg-muted",
         className
       )}
       aria-label="Toggle theme"

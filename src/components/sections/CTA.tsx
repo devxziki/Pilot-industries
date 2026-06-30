@@ -8,19 +8,7 @@ import { Phone, MessageCircle } from "lucide-react"
 export function CTA() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0F3D5E] via-[#0a2d45] to-[#061f30]" />
-
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 30% 50%, rgba(245, 166, 35, 0.12) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(245, 166, 35, 0.06) 0%, transparent 50%)",
-          backgroundSize: "100% 100%",
-          animation: "gradient-shift 10s ease-in-out infinite alternate",
-        }}
-      />
-
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#F5A623]/5 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 dark:bg-accent/3 rounded-full blur-3xl animate-pulse-glow pointer-events-none" />
 
       <Container className="relative z-10">
         <motion.div
@@ -30,16 +18,16 @@ export function CTA() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-4 py-1.5 text-sm text-gray-300 mb-6">
-            <span className="h-2 w-2 rounded-full bg-[#F5A623]" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-4 py-1.5 text-sm text-muted-foreground mb-6">
+            <span className="h-2 w-2 rounded-full bg-accent" />
             Get In Touch
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-foreground leading-[1.1]">
             Need Premium Quality{" "}
-            <span className="text-[#F5A623]">Plaster of Paris</span>?
+            <span className="text-accent">Plaster of Paris</span>?
           </h2>
-          <p className="mt-6 text-lg text-gray-300 max-w-xl mx-auto">
+          <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
             Get in touch with us today. We&apos;re ready to serve you with the best quality POP Gypsum at competitive prices.
           </p>
 
@@ -47,7 +35,7 @@ export function CTA() {
             <Button
               variant="accent"
               size="xl"
-              className="gap-2 shadow-lg shadow-[#F5A623]/20 hover:shadow-xl hover:shadow-[#F5A623]/30"
+              className="gap-2 shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30"
               asChild
             >
               <a href="tel:+919974636384">
@@ -56,9 +44,9 @@ export function CTA() {
               </a>
             </Button>
             <Button
-              variant="white"
+              variant="outline"
               size="xl"
-              className="gap-2 shadow-lg shadow-black/10"
+              className="gap-2"
               asChild
             >
               <a
@@ -72,9 +60,9 @@ export function CTA() {
             </Button>
           </div>
 
-          <p className="mt-6 text-sm text-gray-400">
+          <p className="mt-6 text-sm text-muted-foreground">
             Or call Maheshbhai directly at{" "}
-            <a href="tel:+919974636384" className="text-white font-medium hover:text-[#F5A623] transition-colors">
+            <a href="tel:+919974636384" className="text-foreground font-medium hover:text-accent transition-colors">
               +91 99746 36384
             </a>
           </p>

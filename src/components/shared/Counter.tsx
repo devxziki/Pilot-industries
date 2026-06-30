@@ -14,9 +14,7 @@ export function Counter({ from, to, duration = 2, isInView }: CounterProps) {
   const startedRef = useRef(false)
 
   useEffect(() => {
-    if (startedRef.current) return
-
-    if (!isInView) return
+    if (!isInView || startedRef.current) return
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       startedRef.current = true
@@ -40,5 +38,5 @@ export function Counter({ from, to, duration = 2, isInView }: CounterProps) {
     return () => cancelAnimationFrame(raf)
   }, [from, to, duration, isInView])
 
-  return <span>{count}</span>
+  return <span>{isInView ? count : to}</span>
 }

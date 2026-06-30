@@ -9,14 +9,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-[#0F3D5E] text-white hover:bg-[#0a2d45] shadow-sm hover:shadow-lg hover:shadow-[#0F3D5E]/20 active:scale-[0.97]",
+          "bg-accent text-white hover:bg-accent-hover shadow-sm hover:shadow-lg hover:shadow-accent/20 active:scale-[0.97]",
         accent:
-          "bg-[#F5A623] text-white hover:bg-[#d4921a] shadow-sm hover:shadow-lg hover:shadow-[#F5A623]/25 active:scale-[0.97]",
+          "bg-accent text-white hover:bg-accent-hover shadow-sm hover:shadow-lg hover:shadow-accent/25 active:scale-[0.97]",
         outline:
-          "border-2 border-[#0F3D5E] text-[#0F3D5E] hover:bg-[#0F3D5E] hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-[#0F3D5E] active:scale-[0.97]",
+          "border-2 border-accent-secondary text-accent-secondary hover:bg-accent-secondary hover:text-white active:scale-[0.97]",
         ghost:
-          "text-[#0F3D5E] hover:bg-[#0F3D5E]/5 dark:text-white dark:hover:bg-white/5",
-        white: "bg-white text-[#0F3D5E] hover:bg-gray-100 shadow-sm hover:shadow-lg active:scale-[0.97]",
+          "text-accent-secondary hover:bg-accent-secondary/5",
+        white:
+          "bg-surface text-accent-secondary hover:bg-surface-hover shadow-sm hover:shadow-lg active:scale-[0.97]",
       },
       size: {
         sm: "h-9 px-4 text-xs",

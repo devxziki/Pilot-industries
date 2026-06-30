@@ -14,11 +14,8 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#0F3D5E] text-white overflow-hidden" id="contact">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(245,166,35,0.06)_0%,transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(15,61,94,0.3)_0%,transparent_50%)]" />
-
-      <Container className="relative z-10 py-16 md:py-20">
+    <footer className="relative border-t border-border overflow-hidden" id="contact">
+      <Container className="py-16 md:py-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,10 +23,10 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <h3 className="text-xl font-bold font-heading mb-4 tracking-tight">
-              Pilot<span className="text-[#F5A623]"> Industries</span>
+            <h3 className="text-xl font-bold font-heading mb-4 tracking-tight text-foreground">
+              Pilot<span className="text-accent"> Industries</span>
             </h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               Premium quality Plaster of Paris manufacturer since 2015. Trusted by builders, contractors, and construction companies across India.
             </p>
           </motion.div>
@@ -40,7 +37,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-[#F5A623]">
+            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-accent">
               Quick Links
             </h4>
             <ul className="space-y-2.5">
@@ -48,9 +45,9 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-white transition-colors group"
+                    className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors group"
                   >
-                    <ChevronRight className="h-3 w-3 text-[#F5A623] transition-all duration-300 group-hover:translate-x-1" />
+                    <ChevronRight className="h-3 w-3 text-accent transition-all duration-300 group-hover:translate-x-1" />
                     {link.label}
                   </a>
                 </li>
@@ -64,18 +61,18 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.2 }}
           >
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-[#F5A623]">
+            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-accent">
               Contact
             </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="tel:+919974636384"
-                  className="flex items-start gap-3 text-sm text-gray-300 hover:text-white transition-colors group"
+                  className="flex items-start gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 >
-                  <Phone className="h-4 w-4 mt-0.5 text-[#F5A623] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                  <Phone className="h-4 w-4 mt-0.5 text-accent shrink-0 transition-transform duration-300 group-hover:scale-110" />
                   <span>
-                    <span className="block text-xs text-gray-400">Maheshbhai</span>
+                    <span className="block text-xs text-muted-foreground/60">Maheshbhai</span>
                     9974636384
                   </span>
                 </a>
@@ -83,11 +80,11 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+919974965225"
-                  className="flex items-start gap-3 text-sm text-gray-300 hover:text-white transition-colors group"
+                  className="flex items-start gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 >
-                  <Phone className="h-4 w-4 mt-0.5 text-[#F5A623] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                  <Phone className="h-4 w-4 mt-0.5 text-accent shrink-0 transition-transform duration-300 group-hover:scale-110" />
                   <span>
-                    <span className="block text-xs text-gray-400">Jitubhai</span>
+                    <span className="block text-xs text-muted-foreground/60">Jitubhai</span>
                     9974965225
                   </span>
                 </a>
@@ -95,9 +92,9 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:pilotindustries9697@gmail.com"
-                  className="flex items-start gap-3 text-sm text-gray-300 hover:text-white transition-colors group"
+                  className="flex items-start gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 >
-                  <Mail className="h-4 w-4 mt-0.5 text-[#F5A623] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                  <Mail className="h-4 w-4 mt-0.5 text-accent shrink-0 transition-transform duration-300 group-hover:scale-110" />
                   pilotindustries9697@gmail.com
                 </a>
               </li>
@@ -110,12 +107,12 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.3 }}
           >
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-[#F5A623]">
+            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-accent">
               Address
             </h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-sm text-gray-300">
-                <MapPin className="h-4 w-4 mt-0.5 text-[#F5A623] shrink-0" />
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <MapPin className="h-4 w-4 mt-0.5 text-accent shrink-0" />
                 <span>
                   Survey No. 550, N.H. 8,
                   <br />
@@ -124,10 +121,10 @@ export function Footer() {
                   Bharuch - 392015, Gujarat, India
                 </span>
               </li>
-              <li className="flex items-start gap-3 text-sm text-gray-300">
-                <Clock className="h-4 w-4 mt-0.5 text-[#F5A623] shrink-0" />
+              <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                <Clock className="h-4 w-4 mt-0.5 text-accent shrink-0" />
                 <span>
-                  <span className="block text-xs text-gray-400">Working Hours</span>
+                  <span className="block text-xs text-muted-foreground/60">Working Hours</span>
                   7:00 AM - 7:00 PM
                 </span>
               </li>
@@ -136,9 +133,9 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="relative z-10 border-t border-white/10">
+      <div className="border-t border-border">
         <Container className="py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
             <p>&copy; {new Date().getFullYear()} Pilot Industries. All rights reserved.</p>
             <p className="text-xs">Premium Plaster of Paris Manufacturer</p>
           </div>

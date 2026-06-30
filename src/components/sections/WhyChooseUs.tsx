@@ -4,6 +4,7 @@ import { Container } from "@/components/shared/Container"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
 import {
   ShieldCheck,
   Truck,
@@ -54,9 +55,9 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section className="relative py-20 md:py-28 bg-gray-50 dark:bg-gray-950 overflow-hidden" id="quality">
-      <div className="absolute top-1/3 -left-32 w-64 h-64 bg-[#F5A623]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 -right-32 w-64 h-64 bg-[#0F3D5E]/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative py-20 md:py-28 overflow-hidden" id="quality">
+      <div className="absolute top-1/3 -left-32 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 -right-32 w-64 h-64 bg-accent-secondary/5 rounded-full blur-3xl pointer-events-none" />
 
       <Container className="relative z-10">
         <SectionHeading
@@ -81,51 +82,48 @@ function FeatureCard({
   feature: (typeof features)[0]
   index: number
 }) {
+  const Icon = feature.icon
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="group perspective-[800px]"
+      className="group"
     >
       <Card
         className={cn(
           "relative h-full overflow-hidden transition-all duration-500",
           "before:absolute before:inset-0 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500",
-          "before:bg-gradient-to-br before:from-[#F5A623]/5 before:via-transparent before:to-[#0F3D5E]/5",
+          "before:bg-gradient-to-br before:from-accent/5 before:via-transparent before:to-accent-secondary/5",
           "hover:before:opacity-100 group-hover:shadow-xl group-hover:-translate-y-1",
-          "border-gray-100 dark:border-gray-800",
-          "hover:border-[#F5A623]/20 dark:hover:border-[#F5A623]/20"
+          "hover:border-accent/20"
         )}
-        style={{
-          transformStyle: "preserve-3d",
-        }}
       >
         <CardContent className="relative z-10 p-6">
           <div
             className={cn(
-              "relative h-12 w-12 rounded-xl flex items-center justify-center mb-4",
+              "h-12 w-12 rounded-xl flex items-center justify-center mb-4",
               "transition-all duration-500",
-              "bg-[#0F3D5E]/5 dark:bg-[#0F3D5E]/20",
-              "group-hover:bg-[#0F3D5E] dark:group-hover:bg-[#0F3D5E]",
-              "group-hover:shadow-lg group-hover:shadow-[#0F3D5E]/20"
+              "bg-accent-secondary/10 dark:bg-accent-secondary/15",
+              "group-hover:bg-accent-secondary dark:group-hover:bg-accent-secondary",
+              "group-hover:shadow-lg group-hover:shadow-accent-secondary/20"
             )}
           >
-            <div className="absolute inset-0 rounded-xl bg-[#F5A623]/0 group-hover:bg-[#F5A623]/10 transition-colors duration-500" />
-            <feature.icon
+            <div className="absolute inset-0 rounded-xl bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500" />
+            <Icon
               className={cn(
                 "h-6 w-6 transition-all duration-500",
-                "text-[#0F3D5E] dark:text-[#F5A623]",
-                "group-hover:text-white dark:group-hover:text-white",
+                "text-accent-secondary",
+                "group-hover:text-white",
                 "group-hover:scale-110"
               )}
             />
           </div>
-          <h3 className="font-semibold text-[#0F3D5E] dark:text-white mb-2">
+          <h3 className="font-semibold text-foreground mb-2">
             {feature.title}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             {feature.description}
           </p>
         </CardContent>
@@ -133,13 +131,11 @@ function FeatureCard({
         <div
           className={cn(
             "absolute bottom-0 left-0 right-0 h-[2px] rounded-full",
-            "bg-gradient-to-r from-transparent via-[#F5A623]/0 to-transparent",
-            "group-hover:via-[#F5A623]/40 transition-all duration-500"
+            "bg-gradient-to-r from-transparent via-accent/0 to-transparent",
+            "group-hover:via-accent/40 transition-all duration-500"
           )}
         />
       </Card>
     </motion.div>
   )
 }
-
-import { cn } from "@/lib/utils"
