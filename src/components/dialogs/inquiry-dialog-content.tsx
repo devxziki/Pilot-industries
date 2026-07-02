@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import * as Dialog from "@radix-ui/react-dialog"
-import { motion, AnimatePresence } from "framer-motion"
 import {
   X, ChevronDown, AlertCircle, Loader2,
 } from "lucide-react"
@@ -205,28 +204,21 @@ export function InquiryDialogContent({
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={(open) => !isSubmitting && setIsOpen(open)}>
-      <AnimatePresence>
-        {isOpen && (
-          <Dialog.Portal forceMount>
-            <Dialog.Overlay asChild>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 z-50 bg-black/50 backdrop-blur-md"
-              />
-            </Dialog.Overlay>
+      <Dialog.Portal forceMount>
+        <Dialog.Overlay asChild>
+          <div
+            data-state={isOpen ? "open" : "closed"}
+            className="fixed inset-0 z-50 bg-black/50 backdrop-blur-md transition-opacity duration-200 ease-out data-[state=open]:opacity-100 data-[state=closed]:opacity-0 pointer-events-none"
+          />
+        </Dialog.Overlay>
 
-            <Dialog.Content asChild>
-              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto pointer-events-none">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95, y: 15 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                  transition={{ type: "spring", duration: 0.4 }}
-                  className="w-full max-w-xl bg-surface border border-border rounded-2xl shadow-2xl p-6 md:p-8 pointer-events-auto overflow-hidden max-h-[92vh] flex flex-col scrollbar-thin"
-                >
-                  <div className="relative pb-4 border-b border-border">
+        <Dialog.Content asChild>
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto pointer-events-none">
+            <div
+              data-state={isOpen ? "open" : "closed"}
+              className="w-full max-w-xl bg-surface border border-border rounded-2xl shadow-2xl p-6 md:p-8 pointer-events-auto overflow-hidden max-h-[92vh] flex flex-col scrollbar-thin transition-all duration-300 ease-out data-[state=open]:opacity-100 data-[state=open]:scale-100 data-[state=open]:translate-y-0 data-[state=closed]:opacity-0 data-[state=closed]:scale-95 data-[state=closed]:translate-y-3"
+            >
+              <div className="relative pb-4 border-b border-border">
                     <Dialog.Title className="text-2xl font-bold font-heading text-foreground">
                       Request a Quote
                     </Dialog.Title>
@@ -486,12 +478,10 @@ export function InquiryDialogContent({
                     </div>
                   </form>
 
-                </motion.div>
+                </div> {/* closes form wrapper */}
               </div>
             </Dialog.Content>
           </Dialog.Portal>
-        )}
-      </AnimatePresence>
-    </Dialog.Root>
+      </Dialog.Root>
   )
 }

@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import dynamic from "next/dynamic"
-import { motion, AnimatePresence } from "framer-motion"
 import { X, CheckCircle, Loader2 } from "lucide-react"
 
 interface InquiryContextType {
@@ -69,13 +68,14 @@ export function InquiryProvider({ children }: InquiryProviderProps) {
 
 function Toast({ toast, setToast }: { toast: ToastState; setToast: React.Dispatch<React.SetStateAction<ToastState>> }) {
   return (
-    <AnimatePresence>
+    <>
       {toast.visible && (
-        <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.9 }}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-primary text-white px-5 py-4 rounded-xl shadow-2xl border border-primary-light/30 max-w-md pointer-events-auto"
+        <div
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-primary text-white px-5 py-4 rounded-xl shadow-2xl border border-primary-light/30 max-w-md pointer-events-auto transition-all duration-300 ease-out"
+          style={{
+            opacity: toast.visible ? 1 : 0,
+            transform: toast.visible ? "translateY(0) scale(1)" : "translateY(20px) scale(0.9)",
+          }}
         >
           <CheckCircle className="h-6 w-6 text-accent shrink-0" />
           <div>
@@ -88,8 +88,8 @@ function Toast({ toast, setToast }: { toast: ToastState; setToast: React.Dispatc
           >
             <X className="h-4 w-4" />
           </button>
-        </motion.div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   )
 }

@@ -1,8 +1,7 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { Container } from "@/components/shared/Container"
-import { motion, useInView } from "framer-motion"
 import { Counter } from "@/components/shared/Counter"
 
 const stats = [
@@ -14,7 +13,25 @@ const stats = [
 
 export function Stats() {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "0px 0px 200px 0px" })
+  const [isInView, setIsInView] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.unobserve(el)
+        }
+      },
+      { rootMargin: "0px 0px 200px 0px" }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section className="relative py-16 md:py-20 overflow-hidden">
@@ -25,13 +42,10 @@ export function Stats() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0"
           >
             {stats.map((stat, index) => (
-              <motion.div
+              <div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="relative text-center md:px-8"
+                className={`relative text-center md:px-8 transition-all duration-500 ease-out ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 {index < stats.length - 1 && (
                   <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-16">
@@ -52,7 +66,7 @@ export function Stats() {
                 <p className="mt-3 text-sm md:text-base text-muted-foreground font-medium">
                   {stat.label}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

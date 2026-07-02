@@ -2,8 +2,8 @@
 
 import { Container } from "@/components/shared/Container"
 import { SectionHeading } from "@/components/shared/SectionHeading"
+import { FadeInView } from "@/components/shared/FadeInView"
 import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
 import { HardHat, Construction, Building2, Handshake } from "lucide-react"
 
 const industries = [
@@ -49,14 +49,7 @@ export function Industries() {
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group"
-            >
+            <FadeInView key={item.title} delay={index * 100} duration={400} y={20}>
               <Card className="h-full text-center transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:border-accent/20 group/card">
                 <CardContent className="p-8 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-transparent to-primary/0 group-hover/card:from-accent/5 group-hover/card:to-primary/5 transition-all duration-500 pointer-events-none" />
@@ -72,32 +65,26 @@ export function Industries() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </FadeInView>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ duration: 0.4 }}
-          className="mt-16">
+        <FadeInView duration={400} className="mt-16">
           <h3 className="text-center text-lg font-semibold text-foreground mb-8">
             Service Area
           </h3>
           <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {areas.map((area) => (
-              <motion.div
+              <div
                 key={area.name}
-                whileHover={{ y: -3 }}
-                className="rounded-xl border border-border bg-surface p-6 text-center hover:shadow-lg transition-all duration-300 hover:border-accent/20"
+                className="rounded-xl border border-border bg-surface p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-accent/20"
               >
                 <p className="font-semibold text-foreground">{area.name}</p>
                 <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{area.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </FadeInView>
       </Container>
     </section>
   )

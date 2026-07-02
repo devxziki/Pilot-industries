@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Container } from "@/components/shared/Container"
 import { SectionHeading } from "@/components/shared/SectionHeading"
-import { motion } from "framer-motion"
+import { FadeInView } from "@/components/shared/FadeInView"
 import { Award, Eye, Users } from "lucide-react"
 
 export function About() {
@@ -19,13 +19,12 @@ export function About() {
         />
 
         <div className="mt-16 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-            transition={{ duration: 0.5 }}
+          <FadeInView
+            x={-20}
+            className="relative group"
+            duration={500}
           >
-            <div className="relative group">
+            <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 rounded-2xl blur-xl opacity-40 group-hover:opacity-80 transition-opacity duration-500" />
               <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl">
                 <Image
@@ -45,13 +44,12 @@ export function About() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </FadeInView>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          <FadeInView
+            x={20}
+            delay={100}
+            duration={500}
             className="space-y-6"
           >
             <p className="text-muted-foreground leading-relaxed text-lg">
@@ -62,10 +60,7 @@ export function About() {
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <motion.div
-                whileHover={{ y: -2 }}
-                className="flex items-start gap-3 p-4 rounded-xl bg-surface border border-border transition-all duration-300 hover:shadow-lg hover:border-accent/20"
-              >
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-surface border border-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/20">
                 <div className="mt-0.5 h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
                   <Users className="h-5 w-5 text-accent" />
                 </div>
@@ -73,11 +68,8 @@ export function About() {
                   <p className="font-semibold text-sm text-foreground">Customer First</p>
                   <p className="text-xs text-muted-foreground mt-0.5">We prioritize satisfaction</p>
                 </div>
-              </motion.div>
-              <motion.div
-                whileHover={{ y: -2 }}
-                className="flex items-start gap-3 p-4 rounded-xl bg-surface border border-border transition-all duration-300 hover:shadow-lg hover:border-accent/20"
-              >
+              </div>
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-surface border border-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/20">
                 <div className="mt-0.5 h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                   <Eye className="h-5 w-5 text-primary" />
                 </div>
@@ -85,9 +77,9 @@ export function About() {
                   <p className="font-semibold text-sm text-foreground">Our Vision</p>
                   <p className="text-xs text-muted-foreground mt-0.5">Leading Import & Export manufacturer</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </FadeInView>
         </div>
       </Container>
     </section>

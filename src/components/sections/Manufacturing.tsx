@@ -1,8 +1,9 @@
 "use client"
 
+import { useRef, useState, useEffect } from "react"
 import { Container } from "@/components/shared/Container"
 import { SectionHeading } from "@/components/shared/SectionHeading"
-import { motion } from "framer-motion"
+import { FadeInView } from "@/components/shared/FadeInView"
 import { ShieldCheck, FlaskConical, Package, Truck } from "lucide-react"
 
 const steps = [
@@ -28,6 +29,43 @@ const steps = [
   },
 ]
 
+function ProgressLine() {
+  const ref = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.unobserve(el)
+        }
+      },
+      { rootMargin: "0px 0px 200px 0px" }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-[2px]">
+      <div
+        ref={ref}
+        className="h-full w-full bg-gradient-to-r from-accent via-accent/60 to-accent origin-left transition-all duration-1500 ease-in-out"
+        style={{
+          transform: isVisible ? "scaleX(1)" : "scaleX(0)",
+          transitionDuration: "1.5s",
+          transitionDelay: "0.3s",
+        }}
+      />
+    </div>
+  )
+}
+
 export function Manufacturing() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden bg-muted/30">
@@ -38,25 +76,16 @@ export function Manufacturing() {
         />
 
         <div className="mt-16 grid md:grid-cols-4 gap-8 relative">
-          <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-[2px]">
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-              transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
-              className="h-full w-full bg-gradient-to-r from-accent via-accent/60 to-accent origin-left"
-            />
-          </div>
+          <ProgressLine />
 
           {steps.map((step, index) => {
             const Icon = step.icon
             return (
-              <motion.div
+              <FadeInView
                 key={step.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                delay={index * 200}
+                duration={500}
+                y={30}
                 className="relative text-center group"
               >
                 <div className="relative z-10 mx-auto h-24 w-24 rounded-2xl bg-surface flex items-center justify-center mb-6 border border-border shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-accent/30 group-hover:-translate-y-1">
@@ -71,7 +100,7 @@ export function Manufacturing() {
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px] mx-auto">
                   {step.description}
                 </p>
-              </motion.div>
+              </FadeInView>
             )
           })}
         </div>

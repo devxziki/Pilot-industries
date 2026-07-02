@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/pilotindustrieslogo.jpeg",
+    icon: "/icon.svg",
     apple: "/pilotindustrieslogo.jpeg",
   },
   robots: {

@@ -1,8 +1,8 @@
 "use client"
 
 import { Container } from "@/components/shared/Container"
+import { FadeInView } from "@/components/shared/FadeInView"
 import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
 import { Phone, MessageCircle, Clock, ShieldCheck, FileText } from "lucide-react"
 import { useInquiry } from "@/components/dialogs/inquiry-dialog"
 
@@ -13,11 +13,8 @@ export function CTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 dark:bg-accent/3 rounded-full blur-3xl animate-pulse-glow pointer-events-none" />
 
       <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-          transition={{ duration: 0.5 }}
+        <FadeInView
+          duration={500}
           className="text-center max-w-3xl mx-auto"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-muted-foreground mb-6 shadow-sm">
@@ -90,7 +87,7 @@ export function CTA() {
               +91 97245 84695
             </a>
           </p>
-        </motion.div>
+        </FadeInView>
       </Container>
     </section>
   )

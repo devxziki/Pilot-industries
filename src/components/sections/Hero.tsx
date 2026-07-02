@@ -1,10 +1,7 @@
-"use client"
-
 import Image from "next/image"
 import { Container } from "@/components/shared/Container"
 import { Button } from "@/components/ui/button"
 import { Phone, MessageCircle, Eye, ChevronDown, Truck, MapPin, Package } from "lucide-react"
-import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 const headlineWords = [
@@ -17,16 +14,9 @@ const headlineWords = [
 
 function FloatingOrb({ className, delay = 0 }: { className: string; delay?: number }) {
   return (
-    <motion.div
-      className={cn("absolute rounded-full pointer-events-none", className)}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: [0.06, 0.12, 0.06], scale: [1, 1.1, 1] }}
-      transition={{
-        duration: 6,
-        delay,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
+    <div
+      className={cn("absolute rounded-full pointer-events-none animate-float-orb", className)}
+      style={{ animationDelay: `${delay}s` }}
     />
   )
 }
@@ -43,52 +33,43 @@ export function Hero() {
 
       <Container className="relative z-10 pt-24 pb-16 md:pt-32 md:pb-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
+          <div
+            style={{ animationDelay: "0s" }}
+            className="animate-fade-in"
           >
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-4 py-1.5 text-sm text-muted-foreground mb-8"
+            <p
+              style={{ animationDelay: "0.1s" }}
+              className="animate-fade-in-up inline-flex items-center gap-2 rounded-full border border-border bg-muted px-4 py-1.5 text-sm text-muted-foreground mb-8"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
               </span>
               Established 2015 &middot; 11+ Years Experience
-            </motion.p>
+            </p>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading leading-[1.1] tracking-tight">
               {headlineWords.map((word, i) => (
-                <motion.span
+                <span
                   key={word.text}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                  className={`inline-block mr-[0.3em] last:mr-0 ${word.className}`}
+                  style={{ animationDelay: `${0.2 + i * 0.1}s` }}
+                  className={`inline-block mr-[0.3em] last:mr-0 animate-fade-in-up ${word.className}`}
                 >
                   {word.text}
-                </motion.span>
+                </span>
               ))}
             </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl"
+            <p
+              style={{ animationDelay: "0.7s" }}
+              className="animate-fade-in-up mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl"
             >
               Delivering high-quality POP Gypsum with strict quality control, reliable manufacturing, and dependable supply across India.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.85 }}
-              className="mt-10 flex flex-wrap gap-4"
+            <div
+              style={{ animationDelay: "0.85s" }}
+              className="animate-fade-in-up mt-10 flex flex-wrap gap-4"
             >
               <Button variant="accent" size="lg" className="gap-2 shadow-lg shadow-accent/20" asChild>
                 <a href="tel:+919974636384">
@@ -108,13 +89,11 @@ export function Hero() {
                   View Our Products
                 </a>
               </Button>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1 }}
-              className="mt-12 flex items-center gap-8 text-sm text-muted-foreground"
+            <div
+              style={{ animationDelay: "1s" }}
+              className="animate-fade-in mt-12 flex items-center gap-8 text-sm text-muted-foreground"
             >
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-1.5">
@@ -130,14 +109,12 @@ export function Hero() {
                 </div>
                 <span>Serving <strong className="text-foreground">Pan India</strong></span>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="hidden lg:block"
+          <div
+            style={{ animationDelay: "0.4s" }}
+            className="hidden lg:block animate-scale-in"
           >
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
@@ -159,23 +136,18 @@ export function Hero() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </Container>
 
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      <div
+        style={{ animationDelay: "1.5s" }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
+        <div className="animate-bounce-subtle">
           <ChevronDown className="h-6 w-6 text-muted-foreground" />
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   )
 }

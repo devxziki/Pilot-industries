@@ -23,6 +23,11 @@
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-slow: float 8s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.5s ease-out both;
+  --animate-fade-in-up: fade-in-up 0.5s ease-out both;
+  --animate-scale-in: scale-in 0.5s ease-out both;
+  --animate-bounce-subtle: bounce-subtle 2s ease-in-out infinite;
+  --animate-float-orb: float-orb 6s ease-in-out infinite;
 }
 
 :root {
@@ -89,6 +94,31 @@ html {
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.4; filter: blur(60px); }
   50% { opacity: 0.8; filter: blur(80px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes float-orb {
+  0%, 100% { opacity: 0.06; transform: scale(1); }
+  50% { opacity: 0.12; transform: scale(1.1); }
 }
 
 @media (prefers-reduced-motion: reduce) {

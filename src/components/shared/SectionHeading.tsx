@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { FadeInView } from "@/components/shared/FadeInView"
 import { cn } from "@/lib/utils"
 
 interface SectionHeadingProps {
@@ -19,16 +19,13 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-      transition={{ duration: 0.5 }}
+    <FadeInView
       className={cn(
         "max-w-2xl",
         centered && "mx-auto text-center",
         className
       )}
+      y={30}
     >
       <h2
         className={cn(
@@ -56,6 +53,6 @@ export function SectionHeading({
         <span className={cn("h-0.5 w-12 rounded-full bg-accent")} />
         <span className={cn("h-0.5 w-8 rounded-full", light ? "bg-white/20" : "bg-border")} />
       </div>
-    </motion.div>
+    </FadeInView>
   )
 }

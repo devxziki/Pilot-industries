@@ -3,8 +3,8 @@
 import Image from "next/image"
 import { Container } from "@/components/shared/Container"
 import { SectionHeading } from "@/components/shared/SectionHeading"
+import { FadeInView } from "@/components/shared/FadeInView"
 import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
 import { Check, Package, Phone, FileText } from "lucide-react"
 import { useInquiry } from "@/components/dialogs/inquiry-dialog"
 
@@ -30,70 +30,66 @@ export function Products() {
         />
 
         <div className="mt-16 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "0px 0px 200px 0px" }}
-            transition={{ duration: 0.5 }}
-            className="grid md:grid-cols-2 rounded-2xl border border-border overflow-hidden shadow-lg bg-surface group"
-          >
-            <div className="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
-              <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent mb-4 w-fit">
-                <Package className="h-3 w-3" />
-                Best Seller
+          <FadeInView y={20} duration={500}>
+            <div className="grid md:grid-cols-2 rounded-2xl border border-border overflow-hidden shadow-lg bg-surface group">
+              <div className="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent mb-4 w-fit">
+                  <Package className="h-3 w-3" />
+                  Best Seller
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-bold font-heading text-foreground">
+                  POP Gypsum
+                </h3>
+                <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
+                  Our flagship product. Manufactured with precision, tested for quality, and trusted by thousands of professionals across India.
+                </p>
+
+                <ul className="mt-6 space-y-3">
+                  {features.map((feat) => (
+                    <li key={feat} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/10 mt-0.5 shrink-0">
+                        <Check className="h-3 w-3 text-accent" />
+                      </span>
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Button variant="accent" size="md" className="gap-2 shadow-lg shadow-accent/15" asChild>
+                    <a href="tel:+919974636384">
+                      <Phone className="h-4 w-4" />
+                      Request Call
+                    </a>
+                  </Button>
+                  <Button variant="primary" size="md" className="gap-2" onClick={openInquiry}>
+                      <FileText className="h-4 w-4" />
+                      Send Inquiry
+                  </Button>
+                </div>
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-bold font-heading text-foreground">
-                POP Gypsum
-              </h3>
-              <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
-                Our flagship product. Manufactured with precision, tested for quality, and trusted by thousands of professionals across India.
-              </p>
-
-              <ul className="mt-6 space-y-3">
-                {features.map((feat) => (
-                  <li key={feat} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/10 mt-0.5 shrink-0">
-                      <Check className="h-3 w-3 text-accent" />
-                    </span>
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button variant="accent" size="md" className="gap-2 shadow-lg shadow-accent/15" asChild>
-                  <a href="tel:+919974636384">
-                    <Phone className="h-4 w-4" />
-                    Request Call
-                  </a>
-                </Button>
-                <Button variant="primary" size="md" className="gap-2" onClick={openInquiry}>
-                    <FileText className="h-4 w-4" />
-                    Send Inquiry
-                </Button>
-              </div>
-            </div>
-
-            <div className="relative order-1 md:order-2 overflow-hidden">
-              <div className="absolute -inset-1 bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl blur-xl opacity-60" />
-              <div className="relative h-full">
-                <Image
-                  src="/pilotindustriesproduct2.jpeg"
-                  alt="Premium POP Gypsum Product"
-                  width={600}
-                  height={500}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-white font-semibold tracking-wide">POP Gypsum</p>
-                  <p className="text-white/60 text-sm">Premium Grade</p>
+              <div className="relative order-1 md:order-2 overflow-hidden">
+                <div className="absolute -inset-1 bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl blur-xl opacity-60" />
+                <div className="relative h-full">
+                  <Image
+                    src="/pilotindustriesproduct2.jpeg"
+                    alt="Premium POP Gypsum Product"
+                    width={600}
+                    height={500}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <p className="text-white font-semibold tracking-wide">POP Gypsum</p>
+                    <p className="text-white/60 text-sm">Premium Grade</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </FadeInView>
         </div>
       </Container>
     </section>
