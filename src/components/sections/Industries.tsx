@@ -57,12 +57,12 @@ export function Industries() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group"
             >
-              <Card className="h-full text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:border-accent/20">
+              <Card className="h-full text-center transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:border-accent/20 group/card">
                 <CardContent className="p-8 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-transparent to-accent-secondary/0 group-hover:from-accent/5 group-hover:to-accent-secondary/5 transition-all duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-transparent to-primary/0 group-hover/card:from-accent/5 group-hover/card:to-primary/5 transition-all duration-500 pointer-events-none" />
 
-                  <div className="relative z-10 mx-auto h-14 w-14 rounded-xl bg-accent-secondary/10 dark:bg-accent-secondary/15 flex items-center justify-center mb-5 group-hover:bg-accent-secondary transition-all duration-500 group-hover:shadow-lg group-hover:shadow-accent-secondary/20">
-                    <item.icon className="h-7 w-7 text-accent-secondary group-hover:text-white transition-colors duration-500" />
+                  <div className="relative z-10 mx-auto h-14 w-14 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover/card:bg-accent transition-all duration-500 group-hover/card:shadow-lg group-hover/card:shadow-accent/20">
+                    <item.icon className="h-7 w-7 text-accent group-hover/card:text-white transition-colors duration-500" />
                   </div>
                   <h3 className="relative z-10 font-semibold text-foreground mb-2">
                     {item.title}
@@ -90,11 +90,11 @@ export function Industries() {
             {areas.map((area) => (
               <motion.div
                 key={area.name}
-                whileHover={{ y: -2 }}
-                className="rounded-xl border border-border bg-surface p-5 text-center hover:shadow-lg transition-all duration-300 hover:border-accent/20"
+                whileHover={{ y: -3 }}
+                className="rounded-xl border border-border bg-surface p-6 text-center hover:shadow-lg transition-all duration-300 hover:border-accent/20"
               >
-                <p className="font-semibold text-foreground text-sm">{area.name}</p>
-                <p className="text-xs text-muted-foreground mt-1">{area.description}</p>
+                <p className="font-semibold text-foreground">{area.name}</p>
+                <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{area.description}</p>
               </motion.div>
             ))}
           </div>

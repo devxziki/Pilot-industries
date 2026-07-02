@@ -30,7 +30,7 @@ const steps = [
 
 export function Manufacturing() {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden">
+    <section className="relative py-20 md:py-28 overflow-hidden bg-muted/30">
       <Container className="relative z-10">
         <SectionHeading
           title="Our Manufacturing Process"
@@ -48,29 +48,32 @@ export function Manufacturing() {
             />
           </div>
 
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="relative text-center"
-            >
-              <div className="relative z-10 mx-auto h-24 w-24 rounded-2xl bg-accent-secondary/5 dark:bg-accent-secondary/10 flex items-center justify-center mb-6 border border-surface shadow-lg shadow-accent-secondary/5 dark:shadow-accent-secondary/10 transition-transform duration-300 hover:scale-105">
-                <div className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center shadow-lg shadow-accent/30">
-                  {index + 1}
+          {steps.map((step, index) => {
+            const Icon = step.icon
+            return (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="relative text-center group"
+              >
+                <div className="relative z-10 mx-auto h-24 w-24 rounded-2xl bg-surface flex items-center justify-center mb-6 border border-border shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-accent/30 group-hover:-translate-y-1">
+                  <div className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center shadow-lg shadow-accent/30">
+                    {index + 1}
+                  </div>
+                  <Icon className="h-10 w-10 text-primary transition-colors duration-300 group-hover:text-accent" />
                 </div>
-                <step.icon className="h-10 w-10 text-accent-secondary" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">
-                {step.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px] mx-auto">
-                {step.description}
-              </p>
-            </motion.div>
-          ))}
+                <h3 className="font-semibold text-foreground mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px] mx-auto">
+                  {step.description}
+                </p>
+              </motion.div>
+            )
+          })}
         </div>
       </Container>
     </section>

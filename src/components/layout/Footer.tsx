@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Container } from "@/components/shared/Container"
 import { Phone, Mail, MapPin, Clock, ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
@@ -14,7 +15,7 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border overflow-hidden" id="contact">
+    <footer className="relative border-t border-border overflow-hidden bg-muted/30" id="contact">
       <Container className="py-16 md:py-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <motion.div
@@ -22,10 +23,15 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
+            className="lg:col-span-1"
           >
-            <h3 className="text-xl font-bold font-heading mb-4 tracking-tight text-foreground">
-              Pilot<span className="text-accent"> Industries</span>
-            </h3>
+            <Image
+              src="/pilotindustrieslogo.jpeg"
+              alt="Pilot Industries Logo"
+              width={160}
+              height={50}
+              className="h-10 w-auto mb-5 dark:brightness-[1.1]"
+            />
             <p className="text-muted-foreground text-sm leading-relaxed">
               Premium quality Plaster of Paris manufacturer since 2015. Trusted by builders, contractors, and construction companies across India.
             </p>
@@ -37,10 +43,10 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-accent">
+            <h4 className="font-semibold text-sm uppercase tracking-wider mb-5 text-accent">
               Quick Links
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -61,10 +67,10 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.2 }}
           >
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-accent">
+            <h4 className="font-semibold text-sm uppercase tracking-wider mb-5 text-accent">
               Contact
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
                 <a
                   href="tel:+919974636384"
@@ -107,10 +113,10 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.3 }}
           >
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-accent">
+            <h4 className="font-semibold text-sm uppercase tracking-wider mb-5 text-accent">
               Address
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 text-accent shrink-0" />
                 <span>

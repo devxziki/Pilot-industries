@@ -19,7 +19,7 @@ export function Stats() {
   return (
     <section className="relative py-16 md:py-20 overflow-hidden">
       <Container>
-        <div className="rounded-2xl border border-border bg-muted/50 p-8 md:p-12">
+        <div className="rounded-2xl border border-border bg-gradient-to-br from-primary/5 via-surface to-accent/5 p-8 md:p-12 shadow-lg">
           <div
             ref={ref}
             className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0"
@@ -49,7 +49,7 @@ export function Stats() {
                     </>
                   )}
                 </div>
-                <p className="mt-2 text-sm md:text-base text-muted-foreground font-medium">
+                <p className="mt-3 text-sm md:text-base text-muted-foreground font-medium">
                   {stat.label}
                 </p>
               </motion.div>

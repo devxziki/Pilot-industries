@@ -93,30 +93,30 @@ function FeatureCard({
     >
       <Card
         className={cn(
-          "relative h-full overflow-hidden transition-all duration-500",
+          "relative h-full overflow-hidden transition-all duration-500 group/card",
           "before:absolute before:inset-0 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500",
-          "before:bg-gradient-to-br before:from-accent/5 before:via-transparent before:to-accent-secondary/5",
-          "hover:before:opacity-100 group-hover:shadow-xl group-hover:-translate-y-1",
+          "before:bg-gradient-to-br before:from-accent/5 before:via-transparent before:to-primary/5",
+          "hover:before:opacity-100",
+          "hover:shadow-xl hover:-translate-y-1.5",
           "hover:border-accent/20"
         )}
       >
         <CardContent className="relative z-10 p-6">
           <div
             className={cn(
-              "h-12 w-12 rounded-xl flex items-center justify-center mb-4",
+              "h-12 w-12 rounded-xl flex items-center justify-center mb-5",
               "transition-all duration-500",
-              "bg-accent-secondary/10 dark:bg-accent-secondary/15",
-              "group-hover:bg-accent-secondary dark:group-hover:bg-accent-secondary",
-              "group-hover:shadow-lg group-hover:shadow-accent-secondary/20"
+              "bg-accent/10",
+              "group-hover/card:bg-accent",
+              "group-hover/card:shadow-lg group-hover/card:shadow-accent/25"
             )}
           >
-            <div className="absolute inset-0 rounded-xl bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500" />
             <Icon
               className={cn(
                 "h-6 w-6 transition-all duration-500",
-                "text-accent-secondary",
-                "group-hover:text-white",
-                "group-hover:scale-110"
+                "text-accent",
+                "group-hover/card:text-white",
+                "group-hover/card:scale-110"
               )}
             />
           </div>
@@ -132,7 +132,7 @@ function FeatureCard({
           className={cn(
             "absolute bottom-0 left-0 right-0 h-[2px] rounded-full",
             "bg-gradient-to-r from-transparent via-accent/0 to-transparent",
-            "group-hover:via-accent/40 transition-all duration-500"
+            "group-hover/card:via-accent/40 transition-all duration-500"
           )}
         />
       </Card>

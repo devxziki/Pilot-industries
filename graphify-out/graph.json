@@ -1,0 +1,633 @@
+{
+  "nodes": [
+    {
+      "id": "mnt_a_projects_pilot_industries_next_config_ts",
+      "label": "next.config.ts",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/next.config.ts",
+      "source_location": null,
+      "community": 18,
+      "norm_label": "next.config.ts"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_app_layout_tsx",
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/app/layout.tsx",
+      "source_location": null,
+      "community": 5,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "id": "app_layout_rootlayout",
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/app/layout.tsx",
+      "source_location": "L49",
+      "community": 5,
+      "norm_label": "rootlayout()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_app_page_tsx",
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/app/page.tsx",
+      "source_location": null,
+      "community": 6,
+      "norm_label": "page.tsx"
+    },
+    {
+      "id": "app_page_home",
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/app/page.tsx",
+      "source_location": "L12",
+      "community": 6,
+      "norm_label": "home()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_layout_footer_tsx",
+      "label": "Footer.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/Footer.tsx",
+      "source_location": null,
+      "community": 7,
+      "norm_label": "footer.tsx"
+    },
+    {
+      "id": "layout_footer_footer",
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/Footer.tsx",
+      "source_location": "L15",
+      "community": 7,
+      "norm_label": "footer()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_layout_navbar_tsx",
+      "label": "Navbar.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/Navbar.tsx",
+      "source_location": null,
+      "community": 0,
+      "norm_label": "navbar.tsx"
+    },
+    {
+      "id": "layout_navbar_navbar",
+      "label": "Navbar()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/Navbar.tsx",
+      "source_location": "L19",
+      "community": 0,
+      "norm_label": "navbar()"
+    },
+    {
+      "id": "layout_navbar_onscroll",
+      "label": "onScroll()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/Navbar.tsx",
+      "source_location": "L24",
+      "community": 0,
+      "norm_label": "onscroll()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_layout_themetoggle_tsx",
+      "label": "ThemeToggle.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/ThemeToggle.tsx",
+      "source_location": null,
+      "community": 1,
+      "norm_label": "themetoggle.tsx"
+    },
+    {
+      "id": "layout_themetoggle_usehydrated",
+      "label": "useHydrated()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/ThemeToggle.tsx",
+      "source_location": "L8",
+      "community": 1,
+      "norm_label": "usehydrated()"
+    },
+    {
+      "id": "layout_themetoggle_themetoggle",
+      "label": "ThemeToggle()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/ThemeToggle.tsx",
+      "source_location": "L21",
+      "community": 1,
+      "norm_label": "themetoggle()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_providers_themeprovider_tsx",
+      "label": "ThemeProvider.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/providers/ThemeProvider.tsx",
+      "source_location": null,
+      "community": 8,
+      "norm_label": "themeprovider.tsx"
+    },
+    {
+      "id": "providers_themeprovider_themeprovider",
+      "label": "ThemeProvider()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/providers/ThemeProvider.tsx",
+      "source_location": "L5",
+      "community": 8,
+      "norm_label": "themeprovider()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_sections_about_tsx",
+      "label": "About.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/About.tsx",
+      "source_location": null,
+      "community": 9,
+      "norm_label": "about.tsx"
+    },
+    {
+      "id": "sections_about_about",
+      "label": "About()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/About.tsx",
+      "source_location": "L8",
+      "community": 9,
+      "norm_label": "about()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_sections_cta_tsx",
+      "label": "CTA.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/CTA.tsx",
+      "source_location": null,
+      "community": 10,
+      "norm_label": "cta.tsx"
+    },
+    {
+      "id": "sections_cta_cta",
+      "label": "CTA()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/CTA.tsx",
+      "source_location": "L8",
+      "community": 10,
+      "norm_label": "cta()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_sections_hero_tsx",
+      "label": "Hero.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Hero.tsx",
+      "source_location": null,
+      "community": 2,
+      "norm_label": "hero.tsx"
+    },
+    {
+      "id": "sections_hero_floatingorb",
+      "label": "FloatingOrb()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Hero.tsx",
+      "source_location": "L17",
+      "community": 2,
+      "norm_label": "floatingorb()"
+    },
+    {
+      "id": "sections_hero_hero",
+      "label": "Hero()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Hero.tsx",
+      "source_location": "L33",
+      "community": 2,
+      "norm_label": "hero()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_sections_industries_tsx",
+      "label": "Industries.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Industries.tsx",
+      "source_location": null,
+      "community": 11,
+      "norm_label": "industries.tsx"
+    },
+    {
+      "id": "sections_industries_industries",
+      "label": "Industries()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Industries.tsx",
+      "source_location": "L38",
+      "community": 11,
+      "norm_label": "industries()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_sections_manufacturing_tsx",
+      "label": "Manufacturing.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Manufacturing.tsx",
+      "source_location": null,
+      "community": 12,
+      "norm_label": "manufacturing.tsx"
+    },
+    {
+      "id": "sections_manufacturing_manufacturing",
+      "label": "Manufacturing()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Manufacturing.tsx",
+      "source_location": "L31",
+      "community": 12,
+      "norm_label": "manufacturing()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_sections_products_tsx",
+      "label": "Products.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Products.tsx",
+      "source_location": null,
+      "community": 13,
+      "norm_label": "products.tsx"
+    },
+    {
+      "id": "sections_products_products",
+      "label": "Products()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Products.tsx",
+      "source_location": "L18",
+      "community": 13,
+      "norm_label": "products()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_sections_stats_tsx",
+      "label": "Stats.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Stats.tsx",
+      "source_location": null,
+      "community": 14,
+      "norm_label": "stats.tsx"
+    },
+    {
+      "id": "sections_stats_stats",
+      "label": "Stats()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Stats.tsx",
+      "source_location": "L15",
+      "community": 14,
+      "norm_label": "stats()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_sections_whychooseus_tsx",
+      "label": "WhyChooseUs.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/WhyChooseUs.tsx",
+      "source_location": null,
+      "community": 3,
+      "norm_label": "whychooseus.tsx"
+    },
+    {
+      "id": "sections_whychooseus_whychooseus",
+      "label": "WhyChooseUs()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/WhyChooseUs.tsx",
+      "source_location": "L56",
+      "community": 3,
+      "norm_label": "whychooseus()"
+    },
+    {
+      "id": "sections_whychooseus_featurecard",
+      "label": "FeatureCard()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/WhyChooseUs.tsx",
+      "source_location": "L78",
+      "community": 3,
+      "norm_label": "featurecard()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_shared_container_tsx",
+      "label": "Container.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/Container.tsx",
+      "source_location": null,
+      "community": 15,
+      "norm_label": "container.tsx"
+    },
+    {
+      "id": "shared_container_container",
+      "label": "Container()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/Container.tsx",
+      "source_location": "L10",
+      "community": 15,
+      "norm_label": "container()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_shared_counter_tsx",
+      "label": "Counter.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/Counter.tsx",
+      "source_location": null,
+      "community": 4,
+      "norm_label": "counter.tsx"
+    },
+    {
+      "id": "shared_counter_counter",
+      "label": "Counter()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/Counter.tsx",
+      "source_location": "L12",
+      "community": 4,
+      "norm_label": "counter()"
+    },
+    {
+      "id": "shared_counter_step",
+      "label": "step()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/Counter.tsx",
+      "source_location": "L29",
+      "community": 4,
+      "norm_label": "step()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_shared_sectionheading_tsx",
+      "label": "SectionHeading.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/SectionHeading.tsx",
+      "source_location": null,
+      "community": 16,
+      "norm_label": "sectionheading.tsx"
+    },
+    {
+      "id": "shared_sectionheading_sectionheading",
+      "label": "SectionHeading()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/SectionHeading.tsx",
+      "source_location": "L14",
+      "community": 16,
+      "norm_label": "sectionheading()"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_ui_button_tsx",
+      "label": "button.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/ui/button.tsx",
+      "source_location": null,
+      "community": 19,
+      "norm_label": "button.tsx"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_components_ui_card_tsx",
+      "label": "card.tsx",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/ui/card.tsx",
+      "source_location": null,
+      "community": 20,
+      "norm_label": "card.tsx"
+    },
+    {
+      "id": "mnt_a_projects_pilot_industries_src_lib_utils_ts",
+      "label": "utils.ts",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/lib/utils.ts",
+      "source_location": null,
+      "community": 17,
+      "norm_label": "utils.ts"
+    },
+    {
+      "id": "lib_utils_cn",
+      "label": "cn()",
+      "file_type": "code",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/lib/utils.ts",
+      "source_location": "L4",
+      "community": 17,
+      "norm_label": "cn()"
+    }
+  ],
+  "edges": [
+    {
+      "source": "mnt_a_projects_pilot_industries_src_app_layout_tsx",
+      "target": "app_layout_rootlayout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/app/layout.tsx",
+      "source_location": "L49",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_app_page_tsx",
+      "target": "app_page_home",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/app/page.tsx",
+      "source_location": "L12",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_layout_footer_tsx",
+      "target": "layout_footer_footer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/Footer.tsx",
+      "source_location": "L15",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_layout_navbar_tsx",
+      "target": "layout_navbar_navbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/Navbar.tsx",
+      "source_location": "L19",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_layout_navbar_tsx",
+      "target": "layout_navbar_onscroll",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/Navbar.tsx",
+      "source_location": "L24",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_layout_themetoggle_tsx",
+      "target": "layout_themetoggle_usehydrated",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/ThemeToggle.tsx",
+      "source_location": "L22",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_layout_themetoggle_tsx",
+      "target": "layout_themetoggle_themetoggle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/layout/ThemeToggle.tsx",
+      "source_location": "L21",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_providers_themeprovider_tsx",
+      "target": "providers_themeprovider_themeprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/providers/ThemeProvider.tsx",
+      "source_location": "L5",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_about_tsx",
+      "target": "sections_about_about",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/About.tsx",
+      "source_location": "L8",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_cta_tsx",
+      "target": "sections_cta_cta",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/CTA.tsx",
+      "source_location": "L8",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_hero_tsx",
+      "target": "sections_hero_floatingorb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Hero.tsx",
+      "source_location": "L17",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_hero_tsx",
+      "target": "sections_hero_hero",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Hero.tsx",
+      "source_location": "L33",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_industries_tsx",
+      "target": "sections_industries_industries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Industries.tsx",
+      "source_location": "L38",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_manufacturing_tsx",
+      "target": "sections_manufacturing_manufacturing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Manufacturing.tsx",
+      "source_location": "L31",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_products_tsx",
+      "target": "sections_products_products",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Products.tsx",
+      "source_location": "L18",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_stats_tsx",
+      "target": "sections_stats_stats",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/Stats.tsx",
+      "source_location": "L15",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_whychooseus_tsx",
+      "target": "sections_whychooseus_whychooseus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/WhyChooseUs.tsx",
+      "source_location": "L56",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_sections_whychooseus_tsx",
+      "target": "sections_whychooseus_featurecard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/sections/WhyChooseUs.tsx",
+      "source_location": "L78",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_shared_container_tsx",
+      "target": "shared_container_container",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/Container.tsx",
+      "source_location": "L10",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_shared_counter_tsx",
+      "target": "shared_counter_counter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/Counter.tsx",
+      "source_location": "L12",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_shared_counter_tsx",
+      "target": "shared_counter_step",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/Counter.tsx",
+      "source_location": "L29",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_components_shared_sectionheading_tsx",
+      "target": "shared_sectionheading_sectionheading",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/components/shared/SectionHeading.tsx",
+      "source_location": "L14",
+      "weight": 1,
+      "confidence_score": 1
+    },
+    {
+      "source": "mnt_a_projects_pilot_industries_src_lib_utils_ts",
+      "target": "lib_utils_cn",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/a/Projects/Pilot-industries/src/lib/utils.ts",
+      "source_location": "L4",
+      "weight": 1,
+      "confidence_score": 1
+    }
+  ],
+  "directed": false
+}

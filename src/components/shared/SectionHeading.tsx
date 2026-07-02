@@ -32,7 +32,7 @@ export function SectionHeading({
     >
       <h2
         className={cn(
-          "text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl font-heading",
+          "text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl font-heading leading-[1.15]",
           light ? "text-white" : "text-foreground"
         )}
       >
@@ -41,7 +41,8 @@ export function SectionHeading({
       {subtitle && (
         <p
           className={cn(
-            "mt-4 text-lg leading-relaxed",
+            "mt-5 text-lg leading-relaxed max-w-xl",
+            centered && "mx-auto",
             light
               ? "text-gray-300"
               : "text-muted-foreground"
@@ -50,10 +51,10 @@ export function SectionHeading({
           {subtitle}
         </p>
       )}
-      <div className="relative mt-6 flex items-center justify-center gap-1.5">
-        <span className={cn("h-1 w-3 rounded-full", light ? "bg-white/20" : "bg-border")} />
-        <span className={cn("h-1 w-10 rounded-full bg-accent", centered && "mx-auto")} />
-        <span className={cn("h-1 w-3 rounded-full", light ? "bg-white/20" : "bg-border")} />
+      <div className={cn("relative mt-8 flex items-center gap-2", centered && "justify-center")}>
+        <span className={cn("h-0.5 w-8 rounded-full", light ? "bg-white/20" : "bg-border")} />
+        <span className={cn("h-0.5 w-12 rounded-full bg-accent")} />
+        <span className={cn("h-0.5 w-8 rounded-full", light ? "bg-white/20" : "bg-border")} />
       </div>
     </motion.div>
   )

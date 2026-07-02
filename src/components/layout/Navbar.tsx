@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Container } from "@/components/shared/Container"
 import { ThemeToggle } from "@/components/layout/ThemeToggle"
@@ -41,11 +42,15 @@ export function Navbar() {
             scrolled ? "h-14 md:h-16" : "h-16 md:h-18"
           )}
         >
-          <a href="#home" className="flex items-center gap-2 shrink-0">
-            <span className="text-xl font-bold font-heading tracking-tight">
-              <span className="text-foreground">Pilot</span>
-              <span className="text-accent"> Industries</span>
-            </span>
+          <a href="#home" className="flex items-center gap-3 shrink-0">
+            <Image
+              src="/pilotindustrieslogo.jpeg"
+              alt="Pilot Industries Logo"
+              width={140}
+              height={44}
+              className="h-9 w-auto dark:brightness-[1.1]"
+              priority
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-1">
@@ -66,7 +71,7 @@ export function Navbar() {
               </a>
             ))}
             <div className="ml-3 flex items-center gap-2">
-              <Button variant="outline" size="sm" asChild className="border-border text-muted-foreground hover:text-accent hover:border-accent">
+              <Button variant="outline-accent" size="sm" asChild>
                 <a href="#products">Get Quote</a>
               </Button>
               <ThemeToggle />
@@ -108,7 +113,7 @@ export function Navbar() {
               </a>
             ))}
             <div className="pt-2 px-1">
-              <Button variant="outline" size="md" className="w-full border-border text-muted-foreground hover:text-accent hover:border-accent" asChild>
+              <Button variant="outline-accent" size="md" className="w-full" asChild>
                 <a href="#products" onClick={() => setMobileOpen(false)}>Get Quote</a>
               </Button>
             </div>

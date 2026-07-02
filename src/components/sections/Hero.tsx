@@ -1,8 +1,9 @@
 "use client"
 
+import Image from "next/image"
 import { Container } from "@/components/shared/Container"
 import { Button } from "@/components/ui/button"
-import { Phone, MessageCircle, ChevronDown } from "lucide-react"
+import { Phone, MessageCircle, FileText, ChevronDown } from "lucide-react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
@@ -37,7 +38,7 @@ export function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       <FloatingOrb className="w-64 h-64 -top-20 -right-20 bg-accent/15 dark:bg-accent/10 blur-3xl" delay={0} />
-      <FloatingOrb className="w-96 h-96 -bottom-32 -left-32 bg-accent-secondary/10 dark:bg-accent-secondary/15 blur-3xl" delay={2} />
+      <FloatingOrb className="w-96 h-96 -bottom-32 -left-32 bg-primary/10 dark:bg-primary/15 blur-3xl" delay={2} />
       <FloatingOrb className="w-48 h-48 top-1/3 right-1/4 bg-accent/8 dark:bg-accent/5 blur-3xl" delay={4} />
 
       <Container className="relative z-10 pt-24 pb-16 md:pt-32 md:pb-20">
@@ -51,7 +52,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-4 py-1.5 text-sm text-muted-foreground mb-6"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-4 py-1.5 text-sm text-muted-foreground mb-8"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -87,22 +88,25 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.85 }}
-              className="mt-8 flex flex-wrap gap-4"
+              className="mt-10 flex flex-wrap gap-4"
             >
               <Button variant="accent" size="lg" className="gap-2 shadow-lg shadow-accent/20" asChild>
                 <a href="tel:+919974636384">
-                  <Phone className="h-4 w-4" />
+                  <Phone className="h-5 w-5" />
                   Call Maheshbhai
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="gap-2" asChild>
+              <Button variant="outline-accent" size="lg" className="gap-2" asChild>
                 <a href="https://wa.me/919974636384" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-4 w-4" />
+                  <MessageCircle className="h-5 w-5" />
                   WhatsApp
                 </a>
               </Button>
-              <Button variant="ghost" size="lg" asChild>
-                <a href="#products">Get Quote</a>
+              <Button variant="primary" size="lg" className="gap-2 shadow-lg shadow-primary/20" asChild>
+                <a href="#products">
+                  <FileText className="h-5 w-5" />
+                  Request Quote
+                </a>
               </Button>
             </motion.div>
 
@@ -112,7 +116,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 1 }}
               className="mt-12 flex items-center gap-8 text-sm text-muted-foreground"
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
                   {[1, 2, 3].map((i) => (
                     <div
@@ -127,34 +131,28 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="hidden lg:block"
           >
-            <div className="relative group perspective-[1000px]">
-              <div className="relative rounded-2xl overflow-hidden border border-border bg-surface p-8 shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent-secondary/5 dark:from-accent/3 dark:to-accent-secondary/10 pointer-events-none" />
-
-                <div className="relative aspect-[4/3] rounded-xl bg-gradient-to-br from-accent-secondary to-accent-secondary-hover flex items-center justify-center border border-white/10 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-
-                  <div className="text-center p-8 relative z-10">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center border border-accent/20 backdrop-blur-sm">
-                      <svg className="w-12 h-12 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                      </svg>
-                    </div>
-                    <p className="text-white/70 text-sm font-medium tracking-wide">Premium POP Gypsum</p>
-                    <p className="text-white/40 text-xs mt-1">Manufacturing Excellence</p>
-                  </div>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative rounded-2xl overflow-hidden border border-border/50 bg-surface shadow-2xl">
+                <Image
+                  src="/pilotindustriesproduct1.jpeg"
+                  alt="Pilot Industries - Premium POP Gypsum Manufacturing"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto object-cover aspect-[4/3]"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-white font-semibold text-lg">Premium POP Gypsum</p>
+                  <p className="text-white/70 text-sm">Manufacturing Excellence Since 2015</p>
                 </div>
-
-                <div className="absolute -bottom-1 -right-1 w-32 h-32 bg-accent/5 rounded-full blur-2xl" />
-                <div className="absolute -top-1 -left-1 w-40 h-40 bg-accent-secondary/10 rounded-full blur-2xl" />
               </div>
-
-              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-accent/20 via-transparent to-accent-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
           </motion.div>
         </div>

@@ -6,11 +6,13 @@ import "./globals.css"
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 })
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -43,6 +45,41 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ManufacturingOrganization",
+      name: "Pilot Industries",
+      url: "https://pilotindustries.com",
+      logo: "https://pilotindustries.com/pilotindustrieslogo.jpeg",
+      description:
+        "Premium quality Plaster of Paris (POP) manufacturer since 2015. Serving Gujarat, Mumbai, and all over India.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Survey No. 550, N.H. 8, Opp. Tulsi Hotel, Varediya",
+        addressLocality: "Bharuch",
+        addressRegion: "Gujarat",
+        postalCode: "392015",
+        addressCountry: "IN",
+      },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+91-9974636384",
+          contactType: "sales",
+          name: "Maheshbhai",
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: "+91-9974965225",
+          contactType: "sales",
+          name: "Jitubhai",
+        },
+      ],
+      foundingDate: "2015",
+      areaServed: ["Gujarat", "Maharashtra", "India"],
+    }),
   },
 }
 

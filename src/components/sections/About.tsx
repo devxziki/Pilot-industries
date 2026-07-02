@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Container } from "@/components/shared/Container"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { motion } from "framer-motion"
@@ -8,7 +9,7 @@ import { Award, Eye, Users } from "lucide-react"
 export function About() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden" id="about">
-      <div className="absolute top-0 left-0 w-64 h-64 bg-accent-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <Container className="relative z-10">
@@ -24,13 +25,23 @@ export function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-accent-secondary to-accent-secondary-hover flex items-center justify-center border border-border overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              <div className="text-center p-8 relative z-10">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center border border-accent/20 backdrop-blur-sm transition-transform duration-500 group-hover:scale-110">
-                  <Award className="w-10 h-10 text-accent" />
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 rounded-2xl blur-xl opacity-40 group-hover:opacity-80 transition-opacity duration-500" />
+              <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-xl">
+                <Image
+                  src="/pilotindustriesproduct1.jpeg"
+                  alt="Pilot Industries Manufacturing Facility"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white mb-2">
+                    <Award className="h-3 w-3" />
+                    11+ Years of Excellence
+                  </div>
                 </div>
-                <p className="text-white/60 text-sm font-medium tracking-wide">11+ Years of Manufacturing Excellence</p>
               </div>
             </div>
           </motion.div>
@@ -51,27 +62,27 @@ export function About() {
 
             <div className="grid grid-cols-2 gap-4 pt-4">
               <motion.div
-                whileHover={{ x: 4 }}
-                className="flex items-start gap-3 p-3 rounded-xl bg-surface border border-border transition-all duration-300 hover:shadow-md hover:border-accent/20"
+                whileHover={{ y: -2 }}
+                className="flex items-start gap-3 p-4 rounded-xl bg-surface border border-border transition-all duration-300 hover:shadow-lg hover:border-accent/20"
               >
-                <div className="mt-1 h-8 w-8 rounded-lg bg-accent-secondary/10 dark:bg-accent-secondary/15 flex items-center justify-center shrink-0">
-                  <Users className="h-4 w-4 text-accent-secondary" />
+                <div className="mt-0.5 h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                  <Users className="h-5 w-5 text-accent" />
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-foreground">Customer First</p>
-                  <p className="text-xs text-muted-foreground">We prioritize satisfaction</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">We prioritize satisfaction</p>
                 </div>
               </motion.div>
               <motion.div
-                whileHover={{ x: 4 }}
-                className="flex items-start gap-3 p-3 rounded-xl bg-surface border border-border transition-all duration-300 hover:shadow-md hover:border-accent/20"
+                whileHover={{ y: -2 }}
+                className="flex items-start gap-3 p-4 rounded-xl bg-surface border border-border transition-all duration-300 hover:shadow-lg hover:border-accent/20"
               >
-                <div className="mt-1 h-8 w-8 rounded-lg bg-accent-secondary/10 dark:bg-accent-secondary/15 flex items-center justify-center shrink-0">
-                  <Eye className="h-4 w-4 text-accent-secondary" />
+                <div className="mt-0.5 h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Eye className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-foreground">Our Vision</p>
-                  <p className="text-xs text-muted-foreground">Leading Import & Export manufacturer</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Leading Import & Export manufacturer</p>
                 </div>
               </motion.div>
             </div>
