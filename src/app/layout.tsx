@@ -42,6 +42,10 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
   },
+  icons: {
+    icon: "/pilotindustrieslogo.jpeg",
+    apple: "/pilotindustrieslogo.jpeg",
+  },
   robots: {
     index: true,
     follow: true,

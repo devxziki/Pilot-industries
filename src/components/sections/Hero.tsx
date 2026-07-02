@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Container } from "@/components/shared/Container"
 import { Button } from "@/components/ui/button"
-import { Phone, MessageCircle, FileText, ChevronDown } from "lucide-react"
+import { Phone, MessageCircle, Eye, ChevronDown, Truck, MapPin, Package } from "lucide-react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
@@ -104,8 +104,8 @@ export function Hero() {
               </Button>
               <Button variant="primary" size="lg" className="gap-2 shadow-lg shadow-primary/20" asChild>
                 <a href="#products">
-                  <FileText className="h-5 w-5" />
-                  Request Quote
+                  <Eye className="h-5 w-5" />
+                  View Our Products
                 </a>
               </Button>
             </motion.div>
@@ -117,13 +117,16 @@ export function Hero() {
               className="mt-12 flex items-center gap-8 text-sm text-muted-foreground"
             >
               <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="h-8 w-8 rounded-full border-2 border-surface bg-muted ring-2 ring-border"
-                    />
-                  ))}
+                <div className="flex -space-x-1.5">
+                  <div className="h-9 w-9 rounded-full bg-accent/10 border-2 border-surface ring-2 ring-accent/20 flex items-center justify-center">
+                    <Truck className="h-4 w-4 text-accent" />
+                  </div>
+                  <div className="h-9 w-9 rounded-full bg-accent/10 border-2 border-surface ring-2 ring-accent/20 flex items-center justify-center">
+                    <MapPin className="h-4 w-4 text-accent" />
+                  </div>
+                  <div className="h-9 w-9 rounded-full bg-accent/10 border-2 border-surface ring-2 ring-accent/20 flex items-center justify-center">
+                    <Package className="h-4 w-4 text-accent" />
+                  </div>
                 </div>
                 <span>Serving <strong className="text-foreground">Pan India</strong></span>
               </div>
