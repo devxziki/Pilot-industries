@@ -14,7 +14,7 @@ const stats = [
 
 export function Stats() {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "0px 0px 200px 0px" })
 
   return (
     <section className="relative py-16 md:py-20 overflow-hidden">
@@ -29,7 +29,7 @@ export function Stats() {
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px 200px 0px" }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="relative text-center md:px-8"
               >

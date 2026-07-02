@@ -31,6 +31,7 @@ export function Footer() {
               width={160}
               height={50}
               className="h-10 w-auto mb-5 dark:brightness-[1.1]"
+              sizes="160px"
             />
             <p className="text-muted-foreground text-sm leading-relaxed">
               Premium quality Plaster of Paris manufacturer since 2015. Trusted by builders, contractors, and construction companies across India.

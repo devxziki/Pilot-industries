@@ -52,6 +52,7 @@ export function Navbar() {
               height={44}
               className="h-9 w-auto dark:brightness-[1.1]"
               priority
+              sizes="140px"
             />
           </a>
 

@@ -53,7 +53,7 @@ export function Industries() {
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "0px 0px 200px 0px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group"
             >
@@ -79,10 +79,9 @@ export function Industries() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px 200px 0px" }}
           transition={{ duration: 0.4 }}
-          className="mt-16"
-        >
+          className="mt-16">
           <h3 className="text-center text-lg font-semibold text-foreground mb-8">
             Service Area
           </h3>

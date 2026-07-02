@@ -42,7 +42,7 @@ export function Manufacturing() {
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px 200px 0px" }}
               transition={{ duration: 1.5, delay: 0.3, ease: "easeInOut" }}
               className="h-full w-full bg-gradient-to-r from-accent via-accent/60 to-accent origin-left"
             />
@@ -55,7 +55,7 @@ export function Manufacturing() {
                 key={step.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "0px 0px 200px 0px" }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="relative text-center group"
               >
