@@ -76,6 +76,12 @@ export const metadata: Metadata = {
           contactType: "sales",
           name: "Jitubhai",
         },
+        {
+          "@type": "ContactPoint",
+          telephone: "+91-9724584695",
+          contactType: "sales",
+          name: "Deep Bhai",
+        },
       ],
       foundingDate: "2015",
       areaServed: ["Gujarat", "Maharashtra", "India"],

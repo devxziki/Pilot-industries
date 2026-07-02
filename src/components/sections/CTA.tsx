@@ -81,9 +81,13 @@ export function CTA() {
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            Or call Maheshbhai directly at{" "}
+            Call Maheshbhai{" "}
             <a href="tel:+919974636384" className="text-foreground font-semibold hover:text-accent transition-colors">
               +91 99746 36384
+            </a>
+            {" / "}Deep Bhai{" "}
+            <a href="tel:+919724584695" className="text-foreground font-semibold hover:text-accent transition-colors">
+              +91 97245 84695
             </a>
           </p>
         </motion.div>

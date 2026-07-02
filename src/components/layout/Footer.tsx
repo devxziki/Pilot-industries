@@ -97,6 +97,18 @@ export function Footer() {
               </li>
               <li>
                 <a
+                  href="tel:+919724584695"
+                  className="flex items-start gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+                >
+                  <Phone className="h-4 w-4 mt-0.5 text-accent shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                  <span>
+                    <span className="block text-xs text-muted-foreground/60">Deep Bhai</span>
+                    9724584695
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
                   href="mailto:pilotindustries9697@gmail.com"
                   className="flex items-start gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 >
