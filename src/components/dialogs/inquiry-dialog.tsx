@@ -135,32 +135,63 @@ function InquiryDialog({
   // Auto-focus input reference for focus trap
   const firstInputRef = React.useRef<HTMLInputElement>(null)
 
+  const validateField = (name: string, value: string, allData?: FormState): string | undefined => {
+    const data = allData || formData
+    switch (name) {
+      case "fullName":
+        if (!value.trim()) return "Full name is required"
+        if (value.trim().length < 2) return "Name must be at least 2 characters"
+        if (/\d/.test(value)) return "Name should not contain numbers"
+        return undefined
+      case "phoneNumber":
+        if (!value.trim()) return "Phone number is required"
+        if (!/^[6-9]\d{9}$/.test(value)) return "Enter a valid 10-digit Indian mobile number"
+        return undefined
+      case "emailAddress":
+        if (value.trim()) {
+          const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/
+          if (!emailRegex.test(value)) return "Enter a valid email address"
+        }
+        return undefined
+      case "quantity":
+        if (!value.trim()) return "Quantity is required"
+        if (isNaN(Number(value)) || Number(value) <= 0) return "Enter a valid quantity"
+        return undefined
+      case "specifyUnit":
+        if (data.unit === "OTHER" && !value.trim()) return "Please specify the unit"
+        return undefined
+      default:
+        return undefined
+    }
+  }
+
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target
 
     if (name === "phoneNumber") {
-      // Only accept numbers, max 10 digits
       const numbersOnly = value.replace(/\D/g, "")
       if (numbersOnly.length <= 10) {
-        setFormData((prev) => ({ ...prev, [name]: numbersOnly }))
-        if (errors.phoneNumber) {
-          setErrors((prev) => ({ ...prev, phoneNumber: undefined }))
-        }
+        setFormData((prev) => {
+          const next = { ...prev, [name]: numbersOnly }
+          return next
+        })
+        setErrors((prev) => ({ ...prev, phoneNumber: validateField("phoneNumber", numbersOnly) }))
       }
     } else if (name === "fullName") {
-      // Allow letters, spaces, dots, hyphens only
       const cleaned = value.replace(/[^a-zA-Z\s.\-]/g, "")
       setFormData((prev) => ({ ...prev, [name]: cleaned }))
-      if (errors.fullName) {
-        setErrors((prev) => ({ ...prev, fullName: undefined }))
-      }
+      setErrors((prev) => ({ ...prev, fullName: validateField("fullName", cleaned) }))
+    } else if (name === "unit") {
+      setFormData((prev) => {
+        const next = { ...prev, [name]: value }
+        return next
+      })
+      setErrors((prev) => ({ ...prev, specifyUnit: validateField("specifyUnit", formData.specifyUnit, { ...formData, unit: value }) }))
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }))
-      if (errors[name as keyof FormErrors]) {
-        setErrors((prev) => ({ ...prev, [name]: undefined }))
-      }
+      setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }))
     }
   }
 
