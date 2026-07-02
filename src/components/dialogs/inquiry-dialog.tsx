@@ -141,13 +141,20 @@ function InquiryDialog({
     const { name, value } = e.target
 
     if (name === "phoneNumber") {
-      // Only accept numbers
+      // Only accept numbers, max 10 digits
       const numbersOnly = value.replace(/\D/g, "")
       if (numbersOnly.length <= 10) {
         setFormData((prev) => ({ ...prev, [name]: numbersOnly }))
         if (errors.phoneNumber) {
           setErrors((prev) => ({ ...prev, phoneNumber: undefined }))
         }
+      }
+    } else if (name === "fullName") {
+      // Allow letters, spaces, dots, hyphens only
+      const cleaned = value.replace(/[^a-zA-Z\s.\-]/g, "")
+      setFormData((prev) => ({ ...prev, [name]: cleaned }))
+      if (errors.fullName) {
+        setErrors((prev) => ({ ...prev, fullName: undefined }))
       }
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }))
@@ -160,26 +167,38 @@ function InquiryDialog({
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
 
+    // Full Name: required, min 2 chars, no digits
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full name is required"
+    } else if (formData.fullName.trim().length < 2) {
+      newErrors.fullName = "Name must be at least 2 characters"
+    } else if (/\d/.test(formData.fullName)) {
+      newErrors.fullName = "Name should not contain numbers"
     }
 
+    // Phone: required, exactly 10 digits starting with 6-9
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = "Phone number is required"
     } else if (!/^[6-9]\d{9}$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber = "Please enter a valid 10-digit Indian mobile number"
+      newErrors.phoneNumber = "Enter a valid 10-digit Indian mobile number"
     }
 
-    if (formData.emailAddress.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.emailAddress)) {
-      newErrors.emailAddress = "Please enter a valid email address"
+    // Email: optional but must be valid if provided
+    if (formData.emailAddress.trim()) {
+      const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/
+      if (!emailRegex.test(formData.emailAddress)) {
+        newErrors.emailAddress = "Enter a valid email address"
+      }
     }
 
+    // Quantity: required, must be positive number
     if (!formData.quantity.trim()) {
       newErrors.quantity = "Quantity is required"
     } else if (isNaN(Number(formData.quantity)) || Number(formData.quantity) <= 0) {
-      newErrors.quantity = "Please enter a valid quantity"
+      newErrors.quantity = "Enter a valid quantity"
     }
 
+    // Specify Unit: required if unit is OTHER
     if (formData.unit === "OTHER" && !formData.specifyUnit.trim()) {
       newErrors.specifyUnit = "Please specify the unit"
     }
