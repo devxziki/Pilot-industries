@@ -146,6 +146,7 @@ export function Hero() {
                   height={450}
                   className="w-full h-auto object-cover aspect-[4/3]"
                   priority
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
