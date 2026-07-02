@@ -3,7 +3,7 @@
 import { Container } from "@/components/shared/Container"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { Phone, MessageCircle, FileText, Clock, ShieldCheck } from "lucide-react"
+import { Phone, MessageCircle, Clock, ShieldCheck } from "lucide-react"
 
 export function CTA() {
   return (
@@ -73,9 +73,9 @@ export function CTA() {
               className="gap-2 shadow-lg shadow-primary/20"
               asChild
             >
-              <a href="#products">
-                <FileText className="h-5 w-5" />
-                Request Quote
+              <a href="tel:+919974636384">
+                <Phone className="h-5 w-5" />
+                Request Call
               </a>
             </Button>
           </div>

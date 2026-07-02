@@ -72,7 +72,7 @@ export function Navbar() {
             ))}
             <div className="ml-3 flex items-center gap-2">
               <Button variant="outline-accent" size="sm" asChild>
-                <a href="#products">Get Quote</a>
+                <a href="#products">Inquire</a>
               </Button>
               <ThemeToggle />
             </div>
@@ -114,7 +114,7 @@ export function Navbar() {
             ))}
             <div className="pt-2 px-1">
               <Button variant="outline-accent" size="md" className="w-full" asChild>
-                <a href="#products" onClick={() => setMobileOpen(false)}>Get Quote</a>
+                <a href="#products" onClick={() => setMobileOpen(false)}>Inquire</a>
               </Button>
             </div>
           </div>

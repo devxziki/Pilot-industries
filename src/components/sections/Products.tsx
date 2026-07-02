@@ -63,7 +63,7 @@ export function Products() {
                 <Button variant="accent" size="md" className="gap-2 shadow-lg shadow-accent/15" asChild>
                   <a href="tel:+919974636384">
                     <Phone className="h-4 w-4" />
-                    Get Quote
+                    Request Call
                   </a>
                 </Button>
                 <Button variant="primary" size="md" className="gap-2" asChild>
