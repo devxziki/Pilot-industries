@@ -244,26 +244,40 @@ function InquiryDialog({
     if (validateForm()) {
       setIsSubmitting(true)
 
-      // Simulate API submit
-      setTimeout(() => {
-        console.log("--- Premium Inquiry Record ---")
-        console.log("Full Name:    ", formData.fullName)
-        console.log("Phone:        ", formData.phoneNumber)
-        console.log("Email:        ", formData.emailAddress || "N/A")
-        console.log("Company:      ", formData.companyName || "N/A")
-        console.log("Location:     ", formData.cityState || "N/A")
-        console.log("Product:      ", formData.product)
-        console.log("Quantity:     ", formData.quantity)
-        console.log("Unit:         ", formData.unit === "OTHER" ? formData.specifyUnit : formData.unit)
-        console.log("Message:      ", formData.message || "N/A")
-        console.log("------------------------------")
+      const unitLabel =
+        formData.unit === "BAGS" ? "Bags (50 KG)" :
+        formData.unit === "MT" ? "Metric Tons (MT)" :
+        formData.unit === "KG" ? "Kilograms (KG)" :
+        formData.unit === "OTHER" ? formData.specifyUnit : formData.unit
 
-        setIsSubmitting(false)
-        setIsOpen(false)
-        showToast("Thank you! Your inquiry has been recorded. Our team will contact you shortly.")
-        setFormData(initialFormState)
-        setErrors({})
-      }, 1200)
+      const message = [
+        `*New Inquiry - Pilot Industries*`,
+        ``,
+        `*Name:* ${formData.fullName}`,
+        `*Phone:* +91 ${formData.phoneNumber}`,
+        formData.emailAddress ? `*Email:* ${formData.emailAddress}` : null,
+        formData.companyName ? `*Company:* ${formData.companyName}` : null,
+        formData.cityState ? `*Location:* ${formData.cityState}` : null,
+        `*Product:* ${formData.product}`,
+        `*Quantity:* ${formData.quantity} ${unitLabel}`,
+        formData.message ? `*Message:* ${formData.message}` : null,
+      ]
+        .filter(Boolean)
+        .join("\n")
+
+      console.log("--- Premium Inquiry Record ---")
+      console.log(message)
+      console.log("------------------------------")
+
+      // Open WhatsApp with pre-filled message
+      const whatsappUrl = `https://wa.me/919974636384?text=${encodeURIComponent(message)}`
+      window.open(whatsappUrl, "_blank")
+
+      setIsSubmitting(false)
+      setIsOpen(false)
+      showToast("Thank you! Your inquiry has been sent. Our team will contact you shortly.")
+      setFormData(initialFormState)
+      setErrors({})
     }
   }
 
