@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import { ThemeProvider } from "@/components/providers/ThemeProvider"
+import { InquiryProvider } from "@/components/dialogs/inquiry-dialog"
 import "./globals.css"
 
 const inter = Inter({
@@ -118,7 +119,9 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider>
-          {children}
+          <InquiryProvider>
+            {children}
+          </InquiryProvider>
         </ThemeProvider>
       </body>
     </html>

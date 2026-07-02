@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react"
 import { Container } from "@/components/shared/Container"
 import { ThemeToggle } from "@/components/layout/ThemeToggle"
 import { Button } from "@/components/ui/button"
+import { useInquiry } from "@/components/dialogs/inquiry-dialog"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
@@ -20,6 +21,7 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { openInquiry } = useInquiry()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -71,8 +73,8 @@ export function Navbar() {
               </a>
             ))}
             <div className="ml-3 flex items-center gap-2">
-              <Button variant="outline-accent" size="sm" asChild>
-                <a href="#products">Inquire</a>
+              <Button variant="outline-accent" size="sm" onClick={openInquiry}>
+                Inquire
               </Button>
               <ThemeToggle />
             </div>
@@ -113,8 +115,8 @@ export function Navbar() {
               </a>
             ))}
             <div className="pt-2 px-1">
-              <Button variant="outline-accent" size="md" className="w-full" asChild>
-                <a href="#products" onClick={() => setMobileOpen(false)}>Inquire</a>
+              <Button variant="outline-accent" size="md" className="w-full" onClick={() => { setMobileOpen(false); openInquiry(); }}>
+                Inquire
               </Button>
             </div>
           </div>

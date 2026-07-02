@@ -3,9 +3,11 @@
 import { Container } from "@/components/shared/Container"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { Phone, MessageCircle, Clock, ShieldCheck } from "lucide-react"
+import { Phone, MessageCircle, Clock, ShieldCheck, FileText } from "lucide-react"
+import { useInquiry } from "@/components/dialogs/inquiry-dialog"
 
 export function CTA() {
+  const { openInquiry } = useInquiry()
   return (
     <section className="relative py-20 md:py-28 overflow-hidden bg-muted/30">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 dark:bg-accent/3 rounded-full blur-3xl animate-pulse-glow pointer-events-none" />
@@ -71,12 +73,10 @@ export function CTA() {
               variant="primary"
               size="xl"
               className="gap-2 shadow-lg shadow-primary/20"
-              asChild
+              onClick={openInquiry}
             >
-              <a href="tel:+919974636384">
-                <Phone className="h-5 w-5" />
-                Request Call
-              </a>
+              <FileText className="h-5 w-5" />
+              Request a Quote
             </Button>
           </div>
 

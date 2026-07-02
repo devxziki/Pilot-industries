@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Check, Package, Phone, FileText } from "lucide-react"
+import { useInquiry } from "@/components/dialogs/inquiry-dialog"
 
 const features = [
   "Premium quality POP Gypsum",
@@ -17,6 +18,7 @@ const features = [
 ]
 
 export function Products() {
+  const { openInquiry } = useInquiry()
   return (
     <section className="relative py-20 md:py-28 overflow-hidden" id="products">
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
@@ -66,11 +68,9 @@ export function Products() {
                     Request Call
                   </a>
                 </Button>
-                <Button variant="primary" size="md" className="gap-2" asChild>
-                  <a href="#contact">
+                <Button variant="primary" size="md" className="gap-2" onClick={openInquiry}>
                     <FileText className="h-4 w-4" />
-                    Inquiry
-                  </a>
+                    Send Inquiry
                 </Button>
               </div>
             </div>
