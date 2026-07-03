@@ -204,21 +204,17 @@ export function InquiryDialogContent({
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={(open) => !isSubmitting && setIsOpen(open)}>
-      <Dialog.Portal forceMount>
-        <Dialog.Overlay asChild>
-          <div
-            data-state={isOpen ? "open" : "closed"}
-            className="fixed inset-0 z-50 bg-black/50 backdrop-blur-md transition-opacity duration-200 ease-out data-[state=open]:opacity-100 data-[state=closed]:opacity-0 pointer-events-none"
-          />
-        </Dialog.Overlay>
+      <Dialog.Portal>
+        {isOpen && (
+          <>
+            <Dialog.Overlay asChild>
+              <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-md" />
+            </Dialog.Overlay>
 
-        <Dialog.Content asChild>
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto pointer-events-none">
-            <div
-              data-state={isOpen ? "open" : "closed"}
-              className="w-full max-w-xl bg-surface border border-border rounded-2xl shadow-2xl p-6 md:p-8 pointer-events-auto overflow-hidden max-h-[92vh] flex flex-col scrollbar-thin transition-all duration-300 ease-out data-[state=open]:opacity-100 data-[state=open]:scale-100 data-[state=open]:translate-y-0 data-[state=closed]:opacity-0 data-[state=closed]:scale-95 data-[state=closed]:translate-y-3"
-            >
-              <div className="relative pb-4 border-b border-border">
+            <Dialog.Content asChild>
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
+                <div className="w-full max-w-xl bg-surface border border-border rounded-2xl shadow-2xl p-6 md:p-8 overflow-hidden max-h-[92vh] flex flex-col scrollbar-thin animate-fade-in-up">
+                  <div className="relative pb-4 border-b border-border">
                     <Dialog.Title className="text-2xl font-bold font-heading text-foreground">
                       Request a Quote
                     </Dialog.Title>
@@ -477,11 +473,12 @@ export function InquiryDialogContent({
                       </Button>
                     </div>
                   </form>
-
-                </div> {/* closes form wrapper */}
+                </div>
               </div>
             </Dialog.Content>
-          </Dialog.Portal>
-      </Dialog.Root>
+          </>
+        )}
+      </Dialog.Portal>
+    </Dialog.Root>
   )
 }
